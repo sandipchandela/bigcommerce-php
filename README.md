@@ -2,7 +2,7 @@
 
 ## Overview
 
-This is a BigCommerce app built with PHP 8.3 that handles installation, uninstallation, and various callbacks.
+This is a basic BigCommerce app built with PHP 8.3 that handles installation, uninstallation, and various callbacks.
 
 ## Prerequisites
 
@@ -16,7 +16,8 @@ This is a BigCommerce app built with PHP 8.3 that handles installation, uninstal
 1. **Clone the repository:**
 
    ```bash
-   git clone <repository_url>
+   git clone https://github.com/sandipchandela/bigcommerce-php.git
+   cd bigcommerce-php
    ```
    
 2. **Install dependencies:**
@@ -27,12 +28,12 @@ This is a BigCommerce app built with PHP 8.3 that handles installation, uninstal
 3. **Configure environment variables:**
 
 Create a .env file in the root directory with the following content:
-```
-APP_HOSTNAME=<your_ngrok_hostname>
-DB_URI=<your_mongo_db_uri>
-BC_CLIENT_SECRET=<your_bigcommerce_client_secret>
-SCOPES=store_v2_content,store_v2_information,store_v2_settings
-```
+	```bash
+	APP_HOSTNAME=<your_ngrok_hostname>
+	DB_URI=<your_mongo_db_uri>
+	BC_CLIENT_SECRET=<your_bigcommerce_client_secret>
+	SCOPES=store_v2_content,store_v2_information,store_v2_settings
+	```
 
 4. **local server with Ngrok**
    ```bash
@@ -48,6 +49,6 @@ SCOPES=store_v2_content,store_v2_information,store_v2_settings
 ## Testing
 Run PHPUnit tests:
 
-	``` bash
+	```bash
 	./vendor/bin/phpunit tests -vvv
 	```
