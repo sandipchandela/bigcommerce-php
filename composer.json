@@ -1,4 +1,7 @@
 {
+"name": "sandipchandela/bigcommerce-php",
+"description": "The bigcommerce php based on PHP",
+"keywords": ["bigcommerce","php","app"],
   "require": {
     "php": "^8.3",
     "symfony/dotenv": "^6.0",
