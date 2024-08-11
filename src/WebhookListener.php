@@ -1,6 +1,7 @@
 <?php
+namespace App;
 
-require 'vendor/autoload.php';
+require '../vendor/autoload.php';
 
 use Psr\Log\LoggerInterface;
 

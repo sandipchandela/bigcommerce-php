@@ -1,0 +1,16 @@
+
+### Database Schema for MySQL
+
+Create a table for merchants in your MySQL database:
+
+```sql
+CREATE TABLE merchants (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    store_hash VARCHAR(255) NOT NULL,
+    access_token VARCHAR(255) NOT NULL,
+    store_name VARCHAR(255) NOT NULL,
+    user_id INT NOT NULL,
+    installation_time DATETIME NOT NULL,
+    uninstallation_time DATETIME DEFAULT NULL,
+    deleted BOOLEAN NOT NULL DEFAULT FALSE
+);

@@ -5,6 +5,8 @@ require '../vendor/autoload.php';
 use Symfony\Component\Console\Logger\ConsoleLogger;
 use Symfony\Component\Console\Output\ConsoleOutput;
 use Symfony\Component\Dotenv\Dotenv;
+use App\BigCommerceApp;
+use App\WebhookListener;
 
 $output = new ConsoleOutput();
 $logger = new ConsoleLogger($output);
@@ -13,10 +15,7 @@ $logger = new ConsoleLogger($output);
 $dotenv = new Dotenv();
 $dotenv->load(__DIR__ . '/../.env');
 
-$clientSecret = getenv('CLIENT_SECRET'); // Your BigCommerce app client secret
-$jwtVerifier = new JWTVerifier($clientSecret);
-
-$app = new BigCommerceApp($logger, $jwtVerifier);
+$app = new BigCommerceApp($logger, false);
 $webhookListener = new WebhookListener($logger);
 
 $requestUri = $_SERVER['REQUEST_URI'];
@@ -41,4 +40,6 @@ if ($requestMethod === 'POST') {
     $signedPayloadJWT = $_GET['signed_payload_jwt'];
 
     $app->handleLoad($storeHash, $signedPayloadJWT);
+}else{
+	include 'token-not-valid.php';
 }
